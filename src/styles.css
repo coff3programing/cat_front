@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100&family=Sofia&display=swap");
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -6,6 +7,9 @@
 html,
 body {
   height: 100%;
+  font-family: "Pacifico", cursive;
+  font-family: "Roboto", sans-serif;
+  font-family: "Sofia", cursive;
 }
 body {
   margin: 0;

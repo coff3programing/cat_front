@@ -9,6 +9,8 @@ import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MaterialModule } from '../material/material.module';
+import { ButtonComponentComponent } from './pages/button-component/button-component.component';
+import { MenuComponent } from './pages/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { MaterialModule } from '../material/material.module';
     NewPageComponent,
     SearchPageComponent,
     HomePageComponent,
+    ButtonComponentComponent,
+    MenuComponent,
   ],
   imports: [CommonModule, CatsRoutingModule, MaterialModule],
 })

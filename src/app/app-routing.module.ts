@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'cats',
+    redirectTo: 'auth',
     pathMatch: 'full',
   },
   {

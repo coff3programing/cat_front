@@ -6,6 +6,8 @@ import { ConfirmPageComponent } from './pages/confirm-page/confirm-page.componen
 import { DeniePageComponent } from './pages/denie-page/denie-page.component';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { MaterialModule } from '../material/material.module';
+import { ButtonComponentComponent } from './pages/button-component/button-component.component';
 
 
 @NgModule({
@@ -13,11 +15,13 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
     ConfirmPageComponent,
     DeniePageComponent,
     LayoutPageComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ButtonComponentComponent
   ],
   imports: [
     CommonModule,
-    ConfirmRoutingModule
+    ConfirmRoutingModule,
+    MaterialModule
   ]
 })
 export class ConfirmModule { }
