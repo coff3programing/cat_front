@@ -23,12 +23,27 @@ export class LoginPageComponent {
 
     this.authService.login(this.credentials.email, this.credentials.password).subscribe(
       (response) => {
-        console.log('Inicio de sesión con exito', response);
+        console.log('Inicio de sesión con éxito', response);
         this.authService.setToken(response.token);
-        this.loginSuccess = true;
-        setTimeout(() => {
-          this.router.navigate(['/conditions']);
-        });
+
+        // Verificar el rol del usuario y redirigir en consecuencia
+        const userRole = response.rol;
+
+        switch (userRole) {
+          case 'administrador':
+            this.router.navigate(['/conditions']);
+            break;
+          case 'donante':
+            this.router.navigate(['auth/login']);
+            break;
+          case 'adoptante':
+            this.router.navigate(['auth/register']);
+            break;
+          default:
+            console.error('Rol no reconocido');
+            // Puedes redirigir a una vista predeterminada o mostrar un mensaje de error
+            break;
+        }
       },
       (error) => {
         console.error('Error en el inicio de sesión', error);
@@ -42,6 +57,7 @@ export class LoginPageComponent {
       }
     );
   }
+
   onForgotPassword(): void {
     this.authService.sendResetEmail(this.credentials.email).subscribe(
       () => {
@@ -50,10 +66,10 @@ export class LoginPageComponent {
       (error) => {
         console.error('Error al enviar el correo electrónico de restablecimiento', error);
       }
-    );}
+    );
+  }
 
-
-    displayDialog: boolean = false;
+  displayDialog: boolean = false;
 
   showDialog() {
     this.displayDialog = true;
@@ -62,7 +78,4 @@ export class LoginPageComponent {
   hideDialog() {
     this.displayDialog = false;
   }
-
-}       
-
-
+}

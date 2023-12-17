@@ -7,13 +7,16 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { MaterialModule } from '../material/material.module';
 import { PrimengModule } from '../primeng/primeng.module';
+import { FormErrorDirective } from '../directives/form-error.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     LayoutPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
+    FormErrorDirective
   ],
-  imports: [CommonModule, AuthRoutingModule, MaterialModule, PrimengModule],
+  imports: [CommonModule, AuthRoutingModule, MaterialModule, PrimengModule, ReactiveFormsModule],
 })
 export class AuthModule {}

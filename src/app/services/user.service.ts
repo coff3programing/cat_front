@@ -38,4 +38,11 @@ export class UserService {
   resetPassword(token: string, newPassword: string): Observable<void> {
     return this.http.post<void>(`${this.apiUrl}/reset-password`, { token, newPassword });
   }
+
+  
+  private apiUrl1 = 'http://localhost:3000/users';
+  createUser(user: any): Observable<any> {
+    return this.http.post(this.apiUrl1, user);
+  }
+
 }

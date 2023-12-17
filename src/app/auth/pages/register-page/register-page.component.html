@@ -1,4 +1,7 @@
+
+
 <div class="w-screen h-screen bg-white sm:bg-gray-50 relative">
+
   <div class="absolute w-full h-full hidden sm:block">
     <img
       src="/assets/sources/undraw_pet.png"
@@ -24,9 +27,14 @@
   <div class="bg-white mx-20 mt-11 mb-4 w-1/2">
     <div class="mb-4">
       <h1 class="bold-semibold text-center">Crea tu cuenta</h1>
+      
+<form (ngSubmit)="onSubmit()" class="modern-form" [formGroup]="form">
       <div class="space-y-4">
+        <!-- Vinculación de campos de entrada con [(ngModel)] -->
         <div class="relative">
           <input
+            id="name" 
+            formControlName="name"
             type="text"
             placeholder="Enter Name"
             maxlength="100"
@@ -34,9 +42,34 @@
             required
             class="bg-gray-100 p-3 border-gray-300 w-full mb-3 rounded"
           />
+          <small formError
+          [touched]="Name.touched"
+          [dirty]="Name.dirty"
+          [errors]="Name.errors"
+          ></small>
+          
         </div>
         <div class="relative">
           <input
+            id="lastname" 
+            formControlName="lastname"
+            type="text"
+            placeholder="Enter Last Name"
+            maxlength="100"
+            minlength="3"
+            required
+            class="bg-gray-100 p-3 border-gray-300 w-full mb-3 rounded"
+          />
+          <small formError 
+          [touched]="LastName.touched" 
+          [dirty]="LastName.dirty" 
+          [errors]="LastName.errors"></small>
+        </div>
+
+        <div class="relative">
+          <input 
+            id="email" 
+            formControlName="email"
             type="email"
             placeholder="Enter Email"
             maxlength="100"
@@ -44,21 +77,53 @@
             required
             class="bg-gray-100 p-3 border-gray-300 w-full mb-3 rounded"
           />
+          <small formError 
+          [touched]="Email.touched" 
+          [dirty]="Email.dirty" 
+          [errors]="Email.errors"></small>
         </div>
         <div class="relative">
           <input
+            id="password" 
+            formControlName="password"
             type="password"
             placeholder="Enter Password"
             maxlength="15"
             minlength="3"
             required
+        
             class="bg-gray-100 p-3 border-gray-300 mb-3 w-full rounded"
           />
+          <small formError 
+          [touched]="Password.touched" 
+          [dirty]="Password.dirty" 
+          [errors]="Password.errors"></small>
         </div>
+
+        <div class="relative">
+          <select  name="select"
+            formControlName="rol"
+            class="bg-gray-100 p-3 border-gray-300 mb-3 w-full rounded"
+          >
+            <!-- <option value="" selected>Enter Role</option> -->
+            <option value="donante">Donante</option>
+            <option value="adoptante">Adoptante</option>
+          </select>
+        </div> 
+
+         <!-- <div class="relative">
+          <p-dropdown
+            [(ngModel)]="user.rol"
+            [options]="roles"
+            optionLabel="label"
+            placeholder="Enter Role"
+            [styleClass]="'custom-dropdown-style'"
+          ></p-dropdown>
+        </div>  -->
 
         <div class="text-center">
           <button
-            routerLink="/auth"
+            type="submit"
             mat-button
             mat-flat-button
             class="w-full p-3"
@@ -68,6 +133,9 @@
           </button>
         </div>
       </div>
+</form>
     </div>
   </div>
+
 </div>
+
