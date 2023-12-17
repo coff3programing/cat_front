@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
 
+  display: boolean = true; // Variable para controlar la visibilidad del modal
+
+  showDialog() {
+    this.display = false;
+  }
 }

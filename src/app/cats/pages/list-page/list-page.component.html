@@ -140,3 +140,15 @@
     cursor: pointer;
   }
 </style>
+
+<!-- list-page.component.html -->
+<div *ngFor="let cat of cats">
+  <h2>{{ cat.name }}</h2>
+  <p>{{ cat.info }}</p>
+  <div *ngFor="let image of cat.images">
+    <img [src]="getImageUrl(image)" alt="{{ cat.name }} Image">
+  </div>
+  <!-- Otros detalles del gato -->
+</div>
+
+

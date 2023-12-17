@@ -8,6 +8,7 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { MaterialModule } from '../material/material.module';
 import { ButtonComponentComponent } from './pages/button-component/button-component.component';
+import { PrimengModule } from '../primeng/primeng.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ButtonComponentComponent } from './pages/button-component/button-compon
   imports: [
     CommonModule,
     ConfirmRoutingModule,
-    MaterialModule
+    MaterialModule,
+    PrimengModule
   ]
 })
 export class ConfirmModule { }

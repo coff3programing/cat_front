@@ -92,16 +92,33 @@
 <!-- Modal Overlay -->
 <div class="modal-overlay" *ngIf="displayDialog"></div>
 
-<p-dialog header="Solicitud de restablecimiento" [(visible)]="displayDialog" [modal]="true" [responsive]="true">
+<p-dialog header="Solicitud" [(visible)]="displayDialog" [modal]="true" [responsive]="true">
   <!-- Contenido del diálogo -->
   <p class="dialog-content" style="font-size: 17px;">
-    ¿Deseas modificar tu contraseña?<br>
-    Al confirmar, te llegará un correo de<br>
-     recuperación de contraseña.
+    ¿Deseas modificar tu contraseña?
   </p>
 
   <div class="dialog-buttons">
-    <button pButton type="button" (click)="onForgotPassword(); hideDialog()" class="confirm-button"><b>Confirmar</b></button>
-    <button pButton type="button" (click)="hideDialog()" class="cancel-button">Cancelar</button>
+    <button pButton type="button" (click)="onForgotPassword(); hideDialog()" class="custom-button"><b>Confirmar</b></button>
+    <button pButton type="button" (click)="hideDialog()" class="custom-button cancel-button">Cancelar</button>
   </div>
 </p-dialog>
+
+<style>
+  .dialog-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Ajusta según sea necesario */
+  }
+
+  .custom-button {
+    background-color: #f7924a !important; 
+    color: white !important; 
+  
+  }
+
+  .cancel-button {
+    background-color: #6c757d !important; 
+  }
+</style>
+

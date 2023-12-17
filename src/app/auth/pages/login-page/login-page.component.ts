@@ -31,13 +31,13 @@ export class LoginPageComponent {
 
         switch (userRole) {
           case 'administrador':
-            this.router.navigate(['/conditions']);
+            this.router.navigate(['/conditions/welcome']);
             break;
           case 'donante':
             this.router.navigate(['auth/login']);
             break;
           case 'adoptante':
-            this.router.navigate(['auth/register']);
+            this.router.navigate(['/cats/home']);
             break;
           default:
             console.error('Rol no reconocido');

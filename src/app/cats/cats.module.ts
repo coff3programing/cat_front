@@ -11,6 +11,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MaterialModule } from '../material/material.module';
 import { ButtonComponentComponent } from './pages/button-component/button-component.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { PrimengModule } from '../primeng/primeng.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,6 @@ import { MenuComponent } from './pages/menu/menu.component';
     ButtonComponentComponent,
     MenuComponent,
   ],
-  imports: [CommonModule, CatsRoutingModule, MaterialModule],
+  imports: [CommonModule, CatsRoutingModule, MaterialModule, PrimengModule],
 })
 export class CatsModule {}
