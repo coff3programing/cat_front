@@ -28,7 +28,7 @@ export class ListPageComponent implements OnInit {
   }
 
   getImageUrl(image: string): string {
-    // Ajusta la ruta según la ubicación de tus imágenes en la carpeta "assets/cats-img"
-    return `./assets/cats-img/${image}`;
+    // Ajusta la ruta según la ubicación de tus imágenes en el servidor
+    return `http://localhost:3000/files/cat/${image}`;
   }
 }

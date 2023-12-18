@@ -1,4 +1,4 @@
-<div class="row container-fluid text-center mt-1 row-cols-1 row-cols-md-3 g-4">
+<!-- <div class="row container-fluid text-center mt-1 row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card w-fluid">
       <a routerLink="/cats/new-hero">
@@ -112,43 +112,45 @@
     </div>
   </div>
 </div>
+<my-menu></my-menu> -->
+
+
+<!-- list-page.component.html -->
+<div class="row container-fluid text-center mt-1 row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let cat of cats">
+    <div class="card">
+      <a routerLink="/cats/new-hero"></a>
+      <p class="text-center text-3xl mt-4 text-white">{{ cat.name }}</p>
+      <img [src]="getImageUrl(cat.images[0])" class="card-img-top" >
+      <!-- Otros detalles del gato -->
+    </div>
+  </div>
+</div>
 <my-menu></my-menu>
 
 <style>
+/* styles.css o list-page.component.css */
+.card {
+  border-radius: 44px;
+  width: 340px;
+  height: 348px;
+  max-width: auto;
+  height: 100%;
+  border: none;
+  outline: thin solid lightcoral;
+  background-color: #f7924a;
+  margin: 1rem; /* Espaciado entre las tarjetas */
+}
 
-  .card {
-    border-radius: 44px;
-    width: 340px;
-    height: 348px;
-    max-width: auto;
-    height: 100%;
-    border: none;
-    outline: thin solid lightcoral;
-    background-color: #f7924a;
-  }
+.card img {
+  width: 120px;
+  height: 257px;
+  margin: 2rem auto;
+}
 
-  body {
-    max-width: 99%;
-    margin: auto;
-  }
-  .card img {
-    width: 120px;
-    height: 257px;
-    margin: 2rem auto;
-  }
-  .card:hover {
-    cursor: pointer;
-  }
+.card:hover {
+  cursor: pointer;
+}
+
 </style>
-
-<!-- list-page.component.html -->
-<div *ngFor="let cat of cats">
-  <h2>{{ cat.name }}</h2>
-  <p>{{ cat.info }}</p>
-  <div *ngFor="let image of cat.images">
-    <img [src]="getImageUrl(image)" alt="{{ cat.name }} Image">
-  </div>
-  <!-- Otros detalles del gato -->
-</div>
-
 
