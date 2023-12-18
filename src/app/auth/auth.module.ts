@@ -8,15 +8,19 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { MaterialModule } from '../material/material.module';
 import { PrimengModule } from '../primeng/primeng.module';
 import { FormErrorDirective } from '../directives/form-error.directive';
-import { ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { EmailComponent } from './pages/email/email.component';
+
 
 @NgModule({
   declarations: [
     LayoutPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    FormErrorDirective
+    FormErrorDirective,
+    EmailComponent
   ],
-  imports: [CommonModule, AuthRoutingModule, MaterialModule, PrimengModule, ReactiveFormsModule],
+  imports: [CommonModule, AuthRoutingModule, MaterialModule, PrimengModule, ReactiveFormsModule, 
+   ],
 })
 export class AuthModule {}

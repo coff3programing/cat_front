@@ -1,0 +1,17 @@
+
+<div>
+  <div *ngIf="!resetSuccess" >
+    <h2 >Restablecer Contraseña</h2><br>
+    <div *ngIf="!resetError">
+      <p>Por favor, introduce tu nueva contraseña:</p>
+      <input type="password" [(ngModel)]="newPassword" placeholder="Nueva Contraseña" >
+      <button (click)="onResetPassword()">Restablecer Contraseña</button>
+    </div>
+    <div *ngIf="resetError">
+      Ha ocurrido un error al restablecer la contraseña. Por favor, inténtalo de nuevo.
+    </div>
+  </div>
+  <div *ngIf="resetSuccess">
+    Contraseña restablecida con éxito.
+  </div>
+</div>

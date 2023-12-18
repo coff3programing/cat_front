@@ -31,7 +31,7 @@ export class LoginPageComponent {
 
         switch (userRole) {
           case 'administrador':
-            this.router.navigate(['/conditions/welcome']);
+            this.router.navigate(['/admin']);
             break;
           case 'donante':
             this.router.navigate(['auth/login']);

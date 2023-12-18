@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://localhost:3000/auth';
+  private apiUrl = 'http://localhost:3000/api/auth';
   private token: string = '';
 
   constructor(private http: HttpClient) {}
@@ -40,9 +40,11 @@ export class UserService {
   }
 
   
-  private apiUrl1 = 'http://localhost:3000/users';
+  private apiUrl1 = 'http://localhost:3000/api/users';
   createUser(user: any): Observable<any> {
     return this.http.post(this.apiUrl1, user);
   }
+
+  
 
 }
